@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f3ec;
+  --foreground: #171512;
+  --muted: #6d6860;
+  --line: rgba(23, 21, 18, 0.1);
+  --elevated: #ffffff;
+  --accent: #5b6fff;
+  --accent-soft: #ece8ff;
+}
+
+@theme inline {
+  --color-bg: var(--background);
+  --color-background: var(--background);
+  --color-fg: var(--foreground);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-bg-elevated: var(--elevated);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-geist-mono);
+  --font-serif: var(--font-geist-mono);
+  --font-mono: var(--font-geist-mono);
+  --animate-accordion-down: accordion-down 0.28s ease-out;
+  --animate-accordion-up: accordion-up 0.22s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(520px 280px at 8% -4%, rgba(91, 111, 255, 0.09), transparent 70%),
+    radial-gradient(420px 240px at 100% 0%, rgba(167, 139, 250, 0.08), transparent 68%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--foreground);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: -0.02em;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: rgba(91, 111, 255, 0.22);
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(91, 111, 255, 0.45);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes lumis-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes lumis-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes lumis-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6%, -8%) scale(1.08);
+  }
+}
+
+@keyframes lumis-pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-marquee {
+  animation: lumis-marquee 28s linear infinite;
+}
+
+.animate-float {
+  animation: lumis-float 6s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: lumis-drift 14s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: lumis-pulse-soft 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float,
+  .animate-drift,
+  .animate-pulse-soft {
+    animation: none;
+  }
+}
