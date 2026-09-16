@@ -51,6 +51,12 @@ NEXT_PUBLIC_WHATSAPP=918217700728
 
 Contact submissions go through `POST /api/contact`.
 
+## Deploy on Vercel
+
+Import [deekshith-b48/lumis-work](https://github.com/deekshith-b48/lumis-work). Vercel reads `vercel.json` (Next.js framework, npm build) and Node **20.9+** from `package.json` / `.nvmrc`.
+
+Optional project env vars: `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_PHONE`, `NEXT_PUBLIC_WHATSAPP`.
+
 ## Repo layout
 
 ```
