@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lumis
 
-## Getting Started
+Studio site for [lumis.xyz](https://lumis.xyz) — a digital studio that designs and builds websites, catalogues, stores, custom platforms, and AI tools for businesses.
 
-First, run the development server:
+This is a conversion-focused marketing site, not a personal portfolio. Selected work includes [Bloom & Barrow](https://bloom-and-barrow.vercel.app/).
+
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4
+- Motion, Lucide, Radix UI
+
+## Pages
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Hero, concepts, work, services, pricing, find-a-start |
+| `/services` | Full catalogue with problem / solution cards |
+| `/solutions` | Audience lanes and job → build intents |
+| `/pricing` | Four layers: Basic → Intermediate → Advanced → Advanced Pro |
+| `/work` | Selected work |
+| `/expertise` | How work is made |
+| `/about` | Studio |
+| `/process` | Delivery path |
+| `/contact` | Form, WhatsApp, email, phone |
+
+Pricing starts at **₹18,999** (one-time). Each higher plan keeps everything below it.
+
+## Local setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+npm run lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Optional public contact overrides (defaults are already in the app):
 
-## Learn More
+```
+NEXT_PUBLIC_EMAIL=lumisxyz01@gmail.com
+NEXT_PUBLIC_PHONE=+918217700728
+NEXT_PUBLIC_WHATSAPP=918217700728
+```
 
-To learn more about Next.js, take a look at the following resources:
+Contact submissions go through `POST /api/contact`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Repo layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/app/           routes, layout, contact API
+src/components/    home, pricing, sections, layout
+src/data/          copy, plans, services, work
+public/            logo and stills
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private studio project for Lumis.
